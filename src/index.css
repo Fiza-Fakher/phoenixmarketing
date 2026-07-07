@@ -1,6 +1,44 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-:root{
-    --button-color: #F47C20;
-    --button-text:#FFFFFF;
+:root {
+  --button-color: #F47C20;
+  --button-text: #FFFFFF;
+  
+  /* Font family variable */
+  --font-dm: 'DM Sans', sans-serif;
+}
+
+/* Base font setup - DM Sans Medium (500) for body */
+body {
+  font-family: var(--font-dm);
+  font-weight: 500; /* Medium */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bold/Strong text - DM Sans Bold (700) */
+strong, b, 
+.font-bold,
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-dm);
+  font-weight: 700; /* Bold */
+}
+
+/* Tailwind v4 theme configuration */
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+/* Optional: Custom utility classes if needed */
+.font-dm-medium {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+.font-dm-bold {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
 }

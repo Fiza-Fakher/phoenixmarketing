@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsArrowRight, BsCheck } from "react-icons/bs";
 
 const plans = [
@@ -14,7 +14,7 @@ const plans = [
       "Captions & Hashtags",
       "Monthly Reports",
       "Emails Support",
-      "", // empty for dashed line
+      "", 
       "",
       "",
       "",
@@ -107,25 +107,32 @@ function Pricing() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative flex flex-col rounded-2xl border p-6 transition-all duration-300 ${
+              className={`group relative flex flex-col rounded-2xl border p-6 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl cursor-pointer ${
                 plan.isDark
-                  ? "border-gray-800 bg-gray-900 text-white shadow-xl"
-                  : "border-gray-200 bg-white shadow-sm hover:shadow-lg"
+                  ? "border-gray-800 bg-gray-900 text-white shadow-xl hover:border-[var(--button-color)] hover:shadow-[var(--button-color)]/20"
+                  : "border-gray-200 bg-white shadow-sm hover:border-[var(--button-color)]/50 hover:shadow-orange-500/20"
               }`}
             >
+              {/* Popular badge for last item */}
+              {index === 3 && (
+                <div className="absolute -top-3 right-4 bg-[var(--button-color)] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  POPULAR
+                </div>
+              )}
+
               {/* Card Header */}
-              <div className="mb-6 flex items-center gap-3">
+              <div className="mb-6 flex items-center gap-3 transition-transform duration-300 group-hover:scale-105">
                 <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                    plan.isDark ? "bg-yellow-500/20 text-yellow-500" : "bg-orange-100 text-[var(--button-color)]"
+                  className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 group-hover:rotate-12 ${
+                    plan.isDark ? "bg-yellow-500/20 text-yellow-500 group-hover:bg-yellow-500 group-hover:text-white" : "bg-orange-100 text-[var(--button-color)] group-hover:bg-[var(--button-color)] group-hover:text-white"
                   }`}
                 >
                   {plan.icon}
                 </div>
                 <div>
                   <h3
-                    className={`text-sm font-bold tracking-wide ${
-                      plan.isDark ? "text-[var(--button-color)]" : "text-[var(--button-color)]"
+                    className={`text-sm font-bold tracking-wide transition-colors duration-300 ${
+                      plan.isDark ? "text-[var(--button-color)] group-hover:text-yellow-400" : "text-[var(--button-color)]"
                     }`}
                   >
                     {plan.name}
@@ -137,32 +144,36 @@ function Pricing() {
               </div>
 
               {/* Price */}
-              <div className="mb-6">
+              <div className="mb-6 group-hover:scale-105 transition-transform duration-300 origin-left">
                 <p className={`text-xs ${plan.isDark ? "text-gray-400" : "text-gray-500"}`}>
                   Starting From
                 </p>
                 <div className="flex items-baseline gap-1">
                   <span className="text-sm font-medium">PKR</span>
-                  <span className="text-3xl font-bold">{plan.price}</span>
+                  <span className="text-3xl font-bold group-hover:text-[var(--button-color)] transition-colors duration-300">{plan.price}</span>
                   <span className={`text-sm ${plan.isDark ? "text-gray-400" : "text-gray-500"}`}>
                     /Month
                   </span>
                 </div>
                 <div
-                  className={`mt-3 h-px w-full ${
+                  className={`mt-3 h-px w-full transition-all duration-300 group-hover:w-full ${
                     plan.isDark ? "bg-gray-700" : "bg-gray-200"
                   }`}
                 ></div>
               </div>
 
-              {/* Features */}
+              {/* Features with staggered hover */}
               <div className="mb-8 flex flex-col gap-3">
                 {plan.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
+                  <div 
+                    key={idx} 
+                    className="flex items-start gap-3 transition-all duration-300 hover:translate-x-1"
+                    style={{ transitionDelay: `${idx * 50}ms` }}
+                  >
                     {feature ? (
                       <>
                         <BsCheck
-                          className={`mt-0.5 flex-shrink-0 text-lg ${
+                          className={`mt-0.5 flex-shrink-0 text-lg transition-all duration-300 group-hover:scale-125 ${
                             plan.isDark ? "text-[var(--button-color)]" : "text-[var(--button-color)]"
                           }`}
                         />
@@ -171,21 +182,22 @@ function Pricing() {
                         </span>
                       </>
                     ) : (
-                      <div className="mt-2 h-px w-full border-b border-dashed border-gray-300"></div>
+                      <div className="mt-2 h-px w-full border-b border-dashed border-gray-300 group-hover:border-[var(--button-color)]/30 transition-colors duration-300"></div>
                     )}
                   </div>
                 ))}
               </div>
 
-              {/* CTA Button */}
+              {/* CTA Button with fill animation */}
               <button
-                className={`mt-auto flex h-11 w-full items-center justify-center gap-2 rounded-lg font-semibold transition-all ${
+                className={`group/btn mt-auto flex h-11 w-full items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-300 overflow-hidden relative ${
                   plan.isDark
-                    ? "border border-[var(--button-color)] bg-transparent text-[var(--button-color)] hover:bg-[var(--button-color)] hover:text-white"
-                    : "border border-[var(--button-color)] text-[var(--button-color)] hover:bg-[var(--button-color)] hover:text-white"
+                    ? "border border-[var(--button-color)] bg-transparent text-[var(--button-color)] hover:bg-[var(--button-color)] hover:text-white hover:shadow-[0_0_20px_rgba(244,124,32,0.4)]"
+                    : "border border-[var(--button-color)] text-[var(--button-color)] hover:bg-[var(--button-color)] hover:text-white hover:shadow-[0_0_20px_rgba(244,124,32,0.4)]"
                 }`}
               >
-                Choose Plan <BsArrowRight />
+                <span className="relative z-10">Choose Plan</span>
+                <BsArrowRight className="relative z-10 transition-transform duration-300 group-hover/btn:translate-x-1" />
               </button>
             </div>
           ))}

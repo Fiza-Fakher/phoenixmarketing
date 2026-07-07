@@ -64,30 +64,40 @@ function Blog() {
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="group cursor-pointer overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm transition hover:shadow-md"
+              className="group cursor-pointer overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:border-[var(--button-color)]/30"
             >
               {/* Image Container */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-200">
-                {/* Date Badge */}
-                <div className="absolute left-3 top-3 flex h-12 w-12 flex-col items-center justify-center rounded bg-[var(--button-color)] text-white shadow-md">
+                {/* Date Badge with pulse */}
+                <div className="absolute left-3 top-3 z-10 flex h-12 w-12 flex-col items-center justify-center rounded bg-[var(--button-color)] text-white shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                   <span className="text-lg font-bold leading-none">{blog.day}</span>
                   <span className="text-xs font-medium uppercase">{blog.month}</span>
                 </div>
                 
-                {/* Uncomment when you have images */}
-                {/* <img 
+                {/* Image with zoom effect */}
+                <img 
                   src={blog.image} 
                   alt={blog.title} 
-                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105" 
-                /> */}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Content */}
-              <div className="bg-gray-50 p-4">
-                <h3 className="mb-2 line-clamp-2 text-base font-bold text-gray-900 transition group-hover:text-[var(--button-color)]">
+              <div className="bg-gray-50 p-4 transition-colors duration-300 group-hover:bg-white">
+                <h3 className="mb-2 line-clamp-2 text-base font-bold text-gray-900 transition-colors duration-300 group-hover:text-[var(--button-color)]">
                   {blog.title}
                 </h3>
-                <p className="text-sm text-gray-500">{blog.category}</p>
+                <p className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors duration-300">{blog.category}</p>
+                
+                {/* Read more link appears on hover */}
+                <div className="h-0 overflow-hidden group-hover:h-auto group-hover:mt-3 transition-all duration-300">
+                  <span className="text-xs font-semibold text-[var(--button-color)] inline-flex items-center gap-1">
+                    Read More <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </span>
+                </div>
               </div>
             </div>
           ))}

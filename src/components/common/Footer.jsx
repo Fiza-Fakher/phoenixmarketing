@@ -14,6 +14,7 @@ import {
 
 function Footer() {
   const [email, setEmail] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -36,24 +37,22 @@ function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-20">
-        {/* Grid: items-start added for top alignment */}
+        {/* Grid */}
         <div className="grid grid-cols-1 items-start gap-8 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-12">
           
-          {/* Brand Column: md pe 2 cols, lg pe 3 */}
+          {/* Brand Column */}
           <div className="sm:col-span-2 md:col-span-2 lg:col-span-3">
-            <div className="mb-6">
-              <div className="flex items-center gap-2">
-                <div className="h-10 w-10 rounded bg-orange-500">
-                  {/* <img src="/logo.png" alt="Phoenix" className="h-full w-full" /> */}
-                </div>
+            <div className="mb-6 group cursor-pointer">
+              <div className="flex items-center gap-2 transition-transform duration-300 hover:scale-105">
+                <div className="h-10 w-10 rounded bg-orange-500 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(255,102,0,0.5)] group-hover:rotate-3" />
                 <div>
-                  <h3 className="text-lg font-bold leading-tight">PHOENIX</h3>
+                  <h3 className="text-lg font-bold leading-tight transition-colors duration-300 group-hover:text-[var(--button-color)]">PHOENIX</h3>
                   <p className="text-[10px] tracking-wider text-gray-400">MARKETING SOLUTION</p>
                 </div>
               </div>
             </div>
             
-            <p className="mb-6 text-sm leading-relaxed text-gray-400">
+            <p className="mb-6 text-sm leading-relaxed text-gray-400 transition-colors duration-300 hover:text-gray-300">
               We are a digital marketing agency that helps businesses grow with smart strategies and real results.
             </p>
 
@@ -66,7 +65,7 @@ function Footer() {
             </div>
           </div>
 
-          {/* Quick Links: md pe 2 cols */}
+          {/* Quick Links */}
           <div className="md:col-span-2 lg:col-span-2">
             <h4 className="mb-6 text-base font-semibold text-[var(--button-color)]">
               Quick Links
@@ -79,7 +78,7 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Useful Links: md pe 2 cols */}
+          {/* Useful Links */}
           <div className="md:col-span-2 lg:col-span-2">
             <h4 className="mb-6 text-base font-semibold text-[var(--button-color)]">
               Useful Links
@@ -92,32 +91,32 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info: md pe 3 cols (half width) */}
+          {/* Contact Info */}
           <div className="md:col-span-3 lg:col-span-2">
             <h4 className="mb-6 text-base font-semibold text-[var(--button-color)]">
               Contact Info
             </h4>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex items-start gap-3">
-                <FaPhone className="mt-1 flex-shrink-0 text-[var(--button-color)]" />
-                <span>+44 7469 011915</span>
+              <li className="group flex items-start gap-3 cursor-pointer">
+                <FaPhone className="mt-1 flex-shrink-0 text-[var(--button-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <span className="transition-colors duration-300 group-hover:text-white">+44 7469 011915</span>
               </li>
-              <li className="flex items-start gap-3">
-                <FaEnvelope className="mt-1 flex-shrink-0 text-[var(--button-color)]" />
-                <span>info@phoenixmarketingsolution.uk</span>
+              <li className="group flex items-start gap-3 cursor-pointer">
+                <FaEnvelope className="mt-1 flex-shrink-0 text-[var(--button-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <span className="transition-colors duration-300 group-hover:text-white break-all">info@phoenixmarketingsolution.uk</span>
               </li>
-              <li className="flex items-start gap-3">
-                <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-[var(--button-color)]" />
-                <span>Manchester United Kingdom</span>
+              <li className="group flex items-start gap-3 cursor-pointer">
+                <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-[var(--button-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <span className="transition-colors duration-300 group-hover:text-white">Manchester United Kingdom</span>
               </li>
-              <li className="flex items-start gap-3">
-                <FaGlobe className="mt-1 flex-shrink-0 text-[var(--button-color)]" />
-                <span>www.phoenixmarketingsolution.uk</span>
+              <li className="group flex items-start gap-3 cursor-pointer">
+                <FaGlobe className="mt-1 flex-shrink-0 text-[var(--button-color)] transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <span className="transition-colors duration-300 group-hover:text-white break-all">www.phoenixmarketingsolution.uk</span>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter: md pe 3 cols (half width) */}
+          {/* Newsletter */}
           <div className="md:col-span-3 lg:col-span-3">
             <h4 className="mb-6 text-base font-semibold text-[var(--button-color)]">
               Newsletter
@@ -127,7 +126,11 @@ function Footer() {
             </p>
             
             <form onSubmit={handleSubscribe} className="mb-6">
-              <div className=" mt-6 flex overflow-hidden rounded-md bg-white">
+              <div 
+                className="mt-6 flex overflow-hidden rounded-md bg-white transition-all duration-300 focus-within:ring-2 focus-within:ring-[var(--button-color)] focus-within:shadow-[0_0_20px_rgba(255,102,0,0.3)]"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 <input
                   type="email"
                   value={email}
@@ -138,9 +141,9 @@ function Footer() {
                 />
                 <button
                   type="submit"
-                  className="flex items-center justify-center bg-[var(--button-color)] px-4 text-white transition hover:opacity-90"
+                  className="flex items-center justify-center bg-[var(--button-color)] px-4 text-white transition-all duration-300 hover:bg-orange-600 hover:scale-110"
                 >
-                  <FaPaperPlane />
+                  <FaPaperPlane className={`transition-transform duration-300 ${isHovered ? 'translate-x-1 -translate-y-1' : ''}`} />
                 </button>
               </div>
             </form>
@@ -159,7 +162,7 @@ function SocialIcon({ icon }) {
   return (
     <a
       href="#"
-      className="flex h-9 w-9 items-center justify-center rounded bg-gray-800 text-gray-400 transition hover:bg-[var(--button-color)] hover:text-white"
+      className="flex h-9 w-9 items-center justify-center rounded bg-gray-800 text-gray-400 transition-all duration-300 hover:bg-[var(--button-color)] hover:text-white hover:scale-110 hover:rotate-6 hover:shadow-[0_0_15px_rgba(255,102,0,0.5)]"
     >
       {icon}
     </a>
@@ -171,8 +174,9 @@ function FooterLink({ href, children }) {
     <li>
       <a
         href={href}
-        className="text-sm text-gray-400 transition hover:text-[var(--button-color)] hover:pl-1"
+        className="group flex items-center text-sm text-gray-400 transition-all duration-300 hover:text-[var(--button-color)] hover:pl-2"
       >
+        <span className="w-0 overflow-hidden transition-all duration-300 group-hover:w-4 text-[var(--button-color)]">→</span>
         {children}
       </a>
     </li>

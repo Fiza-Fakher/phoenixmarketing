@@ -55,16 +55,26 @@ function FAQ() {
               {faqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className="overflow-hidden rounded-lg border border-gray-200 transition-all duration-200"
+                  className={`overflow-hidden rounded-lg border transition-all duration-300 ${
+                    openId === faq.id 
+                      ? 'border-[var(--button-color)] shadow-lg shadow-orange-500/10' 
+                      : 'border-gray-200 hover:border-[var(--button-color)]/50'
+                  }`}
                 >
                   <button
                     onClick={() => toggleFaq(faq.id)}
-                    className="flex w-full items-center justify-between bg-white px-5 py-4 text-left transition hover:bg-gray-50"
+                    className="flex w-full items-center justify-between bg-white px-5 py-4 text-left transition-all duration-300 hover:bg-orange-50/30"
                   >
-                    <span className="font-medium text-gray-900">
+                    <span className={`font-medium transition-colors duration-300 ${
+                      openId === faq.id ? 'text-[var(--button-color)]' : 'text-gray-900'
+                    }`}>
                       {faq.question}
                     </span>
-                    <span className={`ml-4 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-gray-500 transition-transform duration-200 ${openId === faq.id ? 'rotate-45' : ''}`}>
+                    <span className={`ml-4 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+                      openId === faq.id 
+                        ? 'bg-[var(--button-color)] text-white rotate-45' 
+                        : 'bg-gray-100 text-gray-500 hover:bg-[var(--button-color)] hover:text-white'
+                    }`}>
                       <svg
                         width="16"
                         height="16"
@@ -82,11 +92,11 @@ function FAQ() {
                   </button>
                   
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      openId === faq.id ? "max-h-40" : "max-h-0"
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                      openId === faq.id ? "max-h-96" : "max-h-0"
                     }`}
                   >
-                    <div className="border-t border-gray-100 bg-gray-50 px-5 py-4 text-gray-600">
+                    <div className="border-t border-gray-100 bg-gray-50/50 px-5 py-4 text-gray-600 leading-relaxed">
                       {faq.answer}
                     </div>
                   </div>
@@ -95,16 +105,19 @@ function FAQ() {
             </div>
           </div>
 
-          {/* Right Side - CTA Card */}
+          {/* Right Side - CTA Card with enhanced hover */}
           <div className="flex items-start lg:justify-end">
-            <div className="w-full rounded-xl bg-[var(--button-color)] p-6 text-white shadow-lg lg:w-[280px]">
+            <div className="group w-full rounded-xl bg-[var(--button-color)] p-6 text-white shadow-lg lg:w-[280px] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(255,102,0,0.3)] hover:-translate-y-2 cursor-pointer overflow-hidden relative">
+              {/* Background pattern */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-[radial-gradient(circle_at_top_right,white_1px,transparent_1px)] bg-[length:20px_20px]" />
+              
               {/* Icon + Text Row */}
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0">
+              <div className="relative flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
                   <FaHeadset className="text-4xl text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold leading-tight mb-1">
+                  <h3 className="text-xl font-bold leading-tight mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
                     Have a Project<br />in Mind?
                   </h3>
                   <p className="text-sm text-white/90">
@@ -113,9 +126,10 @@ function FAQ() {
                 </div>
               </div>
 
-              {/* Button */}
-              <button className="flex h-10 w-full items-center justify-center gap-2 rounded-md bg-black px-6 text-sm font-semibold text-white transition hover:bg-gray-900">
-                Contact Us <BsArrowRight />
+              {/* Button with slide effect */}
+              <button className="group/btn flex h-10 w-full items-center justify-center gap-2 rounded-md bg-black px-6 text-sm font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[var(--button-color)] relative overflow-hidden">
+                <span className="relative z-10">Contact Us</span>
+                <BsArrowRight className="relative z-10 transition-transform duration-300 group-hover/btn:translate-x-1" />
               </button>
             </div>
           </div>
