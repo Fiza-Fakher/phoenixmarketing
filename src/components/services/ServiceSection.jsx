@@ -1,5 +1,6 @@
 import React from 'react';
 import ServiceCard from '../services/Card'
+import chartImage from './Card-09.png';
 import { 
   MdOutlineCampaign, 
   MdOutlineSearch, 
@@ -19,7 +20,7 @@ const servicesData = [
       "Content pillars & calendars",
       "Community building & engagement"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineSearch size={24} />,
@@ -30,7 +31,7 @@ const servicesData = [
       "Technical SEO audits",
       "Keywords & competitors research"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineWeb size={24} />,
@@ -41,7 +42,7 @@ const servicesData = [
       "Custom MERN builds",
       "Tailwind responsive apps"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineEditNote size={24} />,
@@ -52,7 +53,7 @@ const servicesData = [
       "Brand visuals & graphics",
       "Editorial strategy"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAdsClick size={24} />,
@@ -63,7 +64,7 @@ const servicesData = [
       "Ad spend optimization",
       "Performance charts & reporting"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAutoAwesome size={24} />,
@@ -74,7 +75,7 @@ const servicesData = [
       "Automated funnels",
       "AI chat & CRM integration"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAutoAwesome size={24} />,
@@ -85,7 +86,7 @@ const servicesData = [
       "Reels, Shorts & TikTok videos",
       "Motion graphics & visual effects"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAutoAwesome size={24} />,
@@ -96,7 +97,7 @@ const servicesData = [
       "Carousel & story designs",
       "Promotional & ad creatives"
     ],
-    chartImage: "src/components/services/Card-09.png"
+    chartImage: chartImage
   }
 ];
 
