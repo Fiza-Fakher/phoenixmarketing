@@ -26,7 +26,7 @@ function MissionSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left - Logo */}
-          <div className="rounded-3xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-8 md:p-10 shadow-lg shadow-orange-200/30  backdrop-blur-sm shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
+          <div >
             <div className="flex flex-col items-center justify-center text-center gap-6">
               <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-3xl">
                 <img
