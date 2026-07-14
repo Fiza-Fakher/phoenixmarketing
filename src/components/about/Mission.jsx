@@ -1,5 +1,6 @@
 import React from "react";
 import { FiHeart, FiZap, FiTrendingUp } from "react-icons/fi";
+import logoLarge from "./logo-large.png";
 
 function MissionSection() {
   const values = [
@@ -38,7 +39,7 @@ function MissionSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-[var(--button-color)] opacity-20 blur-3xl rounded-full" />
               <img
-                src="logo-large.png"
+                src={logoLarge}
                 alt="Phoenix Logo"
                 className="relative z-10 w-44 md:w-52 h-auto drop-shadow-[0_0_30px_rgba(244,124,32,0.25)]"
               />
