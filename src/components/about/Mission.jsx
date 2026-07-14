@@ -29,7 +29,6 @@ function MissionSection() {
           <div className="rounded-3xl border border-gray-800 bg-gradient-to-b from-gray-900/60 to-gray-900/30 p-8 md:p-10 backdrop-blur-sm shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
             <div className="flex flex-col items-center justify-center text-center gap-6">
               <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-3xl">
-                <div className="absolute inset-0 bg-[var(--button-color)] opacity-20 blur-3xl" />
                 <img
                   src={logoLarge}
                   alt="Phoenix Logo"
