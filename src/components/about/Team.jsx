@@ -1,14 +1,20 @@
 import React from "react";
+import profilePicture from "./Profile Picture for booklet .PNG";
+import saraImage from "./WhatsApp Image 2026-07-15 at 3.43.38 PM.jpeg";
+import danielImage from "./WhatsApp Image 2026-07-15 at 12.02.50 PM (1).jpeg";
+import ayaanImage from "./WhatsApp Image 2026-07-15 at 12.02.50 PM (2).jpeg";
+import umairImage from "./WhatsApp Image 2026-07-15 at 12.02.51 PM (1).jpeg";
+import saraGrowthImage from "./WhatsApp Image 2026-07-15 at 12.02.51 PM.jpeg";
 
 const teamMembers = [
-  { name: "Umair", role: "CEO & Founder", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Sara Ahmad", role: "Head of Growth", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Umair", role: "CEO & Founder", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Sara Ahmad", role: "Head of Growth", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing" },
-  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing" },
+  { name: "Umair", role: "CEO & Founder", desc: "Visionary leader with a passion for innovation, strategic growth, and delivering exceptional digital solutions that help businesses thrive.", img: profilePicture },
+  { name: "Sara Ahmad", role: "Head of Growth", desc: "Leads regional operations with a focus on business growth, strategic partnerships, client success, and building high-performing teams.", img: saraImage },
+  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: danielImage },
+  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: ayaanImage },
+  { name: "Umair", role: "CEO & Founder", desc: "Growth strategist with a decade in performance marketing", img: umairImage },
+  { name: "Sara Ahmad", role: "Head of Growth", desc: "Growth strategist with a decade in performance marketing", img: saraGrowthImage },
+  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: profilePicture },
+  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: profilePicture },
 ];
 
 function TeamSection() {
@@ -38,7 +44,7 @@ function TeamSection() {
             >
               <div className="aspect-[4/5] bg-gray-200 relative overflow-hidden">
                 <img
-                  src={`/team-${(index % 4) + 1}.jpg`}
+                  src={member.img}
                   alt={member.name}
                   className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
                 />
