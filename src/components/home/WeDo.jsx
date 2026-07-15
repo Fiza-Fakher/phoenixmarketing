@@ -37,7 +37,7 @@ const services = [
 
 function WeDo() {
   return (
-    <section className="relative w-full overflow-hidden bg-black py-16 lg:py-14">
+    <section id="services" className="relative w-full overflow-hidden bg-black py-16 lg:py-14">
       {/* Decorative orange dots pattern bottom-left */}
       <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 opacity-30">
         <div
