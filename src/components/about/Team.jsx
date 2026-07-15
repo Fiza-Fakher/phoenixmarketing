@@ -8,7 +8,7 @@ import saraGrowthImage from "./WhatsApp Image 2026-07-15 at 12.02.51 PM.jpeg";
 
 const teamMembers = [
   { name: "Umair", role: "CEO & Founder", desc: "Visionary leader with a passion for innovation, strategic growth, and delivering exceptional digital solutions that help businesses thrive.", img: profilePicture },
-  { name: "Sara Ahmad", role: "Head of Growth", desc: "Leads regional operations with a focus on business growth, strategic partnerships, client success, and building high-performing teams.", img: saraImage },
+  { name: "Mutahir", role: "Head of Growth", desc: "Leads regional operations with a focus on business growth, strategic partnerships, client success, and building high-performing teams.", img: saraImage },
   { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: danielImage },
   { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: ayaanImage },
   { name: "Umair", role: "CEO & Founder", desc: "Growth strategist with a decade in performance marketing", img: umairImage },
