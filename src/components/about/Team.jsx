@@ -1,20 +1,41 @@
 import React from "react";
-import profilePicture from "./Profile Picture for booklet .PNG";
-import saraImage from "./WhatsApp Image 2026-07-15 at 3.43.38 PM.jpeg";
-import danielImage from "./WhatsApp Image 2026-07-15 at 12.02.50 PM (1).jpeg";
-import ayaanImage from "./WhatsApp Image 2026-07-15 at 12.02.50 PM (2).jpeg";
-import umairImage from "./WhatsApp Image 2026-07-15 at 12.02.51 PM (1).jpeg";
-import saraGrowthImage from "./WhatsApp Image 2026-07-15 at 12.02.51 PM.jpeg";
+
+const profilePicture = new URL("./Profile Picture for booklet .PNG", import.meta.url).href;
+const saraImage = new URL("./WhatsApp Image 2026-07-15 at 3.43.38 PM.jpeg", import.meta.url).href;
+const danielImage = new URL("./WhatsApp Image 2026-07-15 at 12.02.50 PM (1).jpeg", import.meta.url).href;
+const ayaanImage = new URL("./WhatsApp Image 2026-07-15 at 12.02.50 PM (2).jpeg", import.meta.url).href;
+const umairImage = new URL("./WhatsApp Image 2026-07-15 at 12.02.51 PM (1).jpeg", import.meta.url).href;
+const saraGrowthImage = new URL("./WhatsApp Image 2026-07-15 at 12.02.51 PM.jpeg", import.meta.url).href;
+
+const createAvatarSvg = (name, color) => {
+  const initials = name
+    .split(" ")
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760">
+      <rect width="600" height="760" rx="40" fill="${color}" />
+      <circle cx="300" cy="280" r="145" fill="rgba(255,255,255,0.16)" />
+      <path d="M180 650c32-120 188-120 220 0" fill="rgba(255,255,255,0.16)" />
+      <text x="300" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">${initials}</text>
+      <text x="300" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="rgba(255,255,255,0.85)">${name}</text>
+    </svg>`;
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+};
 
 const teamMembers = [
-  { name: "Umair", role: "CEO & Founder", desc: "Visionary leader with a passion for innovation, strategic growth, and delivering exceptional digital solutions that help businesses thrive.", img: profilePicture },
-  { name: "Mutahir", role: "Head of Growth", desc: "Leads regional operations with a focus on business growth, strategic partnerships, client success, and building high-performing teams.", img: saraImage },
-  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: danielImage },
-  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: ayaanImage },
-  { name: "Umair", role: "CEO & Founder", desc: "Growth strategist with a decade in performance marketing", img: umairImage },
-  { name: "Sara Ahmad", role: "Head of Growth", desc: "Growth strategist with a decade in performance marketing", img: saraGrowthImage },
-  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: profilePicture },
-  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: profilePicture },
+  { name: "Umair", role: "CEO & Founder", desc: "Visionary leader with a passion for innovation, strategic growth, and delivering exceptional digital solutions that help businesses thrive.", img: profilePicture, fallback: createAvatarSvg("Umair", "#1d4ed8") },
+  { name: "Mutahir", role: "Head of Growth", desc: "Leads regional operations with a focus on business growth, strategic partnerships, client success, and building high-performing teams.", img: saraImage, fallback: createAvatarSvg("Mutahir", "#7c3aed") },
+  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: danielImage, fallback: createAvatarSvg("Daniel", "#0f766e") },
+  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: ayaanImage, fallback: createAvatarSvg("Ayaan", "#b45309") },
+  { name: "Umair", role: "CEO & Founder", desc: "Growth strategist with a decade in performance marketing", img: umairImage, fallback: createAvatarSvg("Umair", "#dc2626") },
+  { name: "Sara Ahmad", role: "Head of Growth", desc: "Growth strategist with a decade in performance marketing", img: saraGrowthImage, fallback: createAvatarSvg("Sara", "#be185d") },
+  { name: "Daniel Rivera", role: "Lead Engineer", desc: "Growth strategist with a decade in performance marketing", img: profilePicture, fallback: createAvatarSvg("Daniel", "#2563eb") },
+  { name: "Ayaan Malik", role: "Creative Director", desc: "Growth strategist with a decade in performance marketing", img: profilePicture, fallback: createAvatarSvg("Ayaan", "#4f46e5") },
 ];
 
 function TeamSection() {
@@ -46,6 +67,11 @@ function TeamSection() {
                 <img
                   src={member.img}
                   alt={member.name}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.onerror = null;
+                    event.currentTarget.src = member.fallback;
+                  }}
                   className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-110"
                 />
 
