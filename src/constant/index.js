@@ -1,7 +1,7 @@
 export const links = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
-  { name: "Portfolio", path: "/portfolio" },
+  { name: "Portfolio", path: "https://phoenixmarketingsolution.uk/" },
   { name: "Pricing", path: "/#pricing" },
   { name: "FAQs", path: "/#faq" },
   { name: "Contact", path: "/contact" }
