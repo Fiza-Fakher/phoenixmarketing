@@ -1,4 +1,9 @@
 import React from "react";
+import imgSocial from "./10-social-media-tips-to-boost-engagement.jpg.jpeg";
+import imgSEO from "./seo-strategies-that-actually-work.jpg.jpeg";
+import imgPaidAds2 from "./how-paid-ads-can-grow-your-business (2).jpg.jpeg";
+import imgContent from "./content-marketing-trends-to-follow.jpg.jpeg";
+import imgPaidAds from "./how-paid-ads-can-grow-your-business.jpg.jpeg";
 
 const blogs = [
   {
@@ -7,7 +12,7 @@ const blogs = [
     month: "May",
     title: "10 Social Media Tips to Boost Engagement",
     category: "Marketing",
-    image: "/blog1.jpg",
+    image: imgSocial,
   },
   {
     id: 2,
@@ -15,7 +20,7 @@ const blogs = [
     month: "May",
     title: "SEO Strategies That Actually Work in 2024",
     category: "SEO",
-    image: "/blog2.jpg",
+    image: imgSEO,
   },
   {
     id: 3,
@@ -23,7 +28,7 @@ const blogs = [
     month: "May",
     title: "How Paid Ads Can Grow Your Business",
     category: "Advertising",
-    image: "/blog3.jpg",
+    image: imgPaidAds2,
   },
   {
     id: 4,
@@ -31,7 +36,7 @@ const blogs = [
     month: "June",
     title: "Content Marketing Trends to Follow",
     category: "Marketing",
-    image: "/blog4.jpg",
+    image: imgContent,
   },
   {
     id: 5,
@@ -39,7 +44,7 @@ const blogs = [
     month: "May",
     title: "How Paid Ads Can Grow Your Business",
     category: "Advertising",
-    image: "/blog5.jpg",
+    image: imgPaidAds,
   },
 ];
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import ServiceCard from '../services/Card'
+import chartImage from './Card-09.png';
 import { 
   MdOutlineCampaign, 
   MdOutlineSearch, 
@@ -19,7 +20,7 @@ const servicesData = [
       "Content pillars & calendars",
       "Community building & engagement"
     ],
-    chartImage: "/chart-social.jpg"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineSearch size={24} />,
@@ -30,7 +31,7 @@ const servicesData = [
       "Technical SEO audits",
       "Keywords & competitors research"
     ],
-    chartImage: "/chart-seo.jpg"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineWeb size={24} />,
@@ -41,7 +42,7 @@ const servicesData = [
       "Custom MERN builds",
       "Tailwind responsive apps"
     ],
-    chartImage: "/chart-web.jpg"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineEditNote size={24} />,
@@ -52,7 +53,7 @@ const servicesData = [
       "Brand visuals & graphics",
       "Editorial strategy"
     ],
-    chartImage: "/chart-content.jpg"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAdsClick size={24} />,
@@ -63,7 +64,7 @@ const servicesData = [
       "Ad spend optimization",
       "Performance charts & reporting"
     ],
-    chartImage: "/chart-ads.jpg"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAutoAwesome size={24} />,
@@ -74,18 +75,40 @@ const servicesData = [
       "Automated funnels",
       "AI chat & CRM integration"
     ],
-    chartImage: "/chart-automation.jpg"
+    chartImage: chartImage
   },
   {
     icon: <MdOutlineAutoAwesome size={24} />,
-    title: "Business & AI Automation",
-    description: "Automate the busywork and scale operations effortlessly.",
+    title: "Video Editing & Post-Production",
+    description: "Creative, high-impact video editing for brands, creators, and businesses.",
     features: [
-      "Lead scoring workflows",
-      "Automated funnels",
-      "AI chat & CRM integration"
+      "Cinematic video editing",
+      "Reels, Shorts & TikTok videos",
+      "Motion graphics & visual effects"
     ],
-    chartImage: "/chart-automation.jpg"
+    chartImage: chartImage
+  },
+  {
+    icon: <MdOutlineAutoAwesome size={24} />,
+    title: "Social Media Content Design",
+    description: "Creative, scroll-stopping visuals designed to grow your brand and engage your audience.",
+    features: [
+      "Custom social media posts",
+      "Carousel & story designs",
+      "Promotional & ad creatives"
+    ],
+    chartImage: chartImage
+  },
+  {
+    icon: <MdOutlineAutoAwesome size={24} />,
+    title: "Influencers Marketing",
+    description: "Connect with the right creators to grow your brand and drive engagement.",
+    features: [
+      "Creator partnerships",
+      "Campaign strategy & management",
+      "Brand collaborations"
+    ],
+    chartImage: chartImage
   }
 ];
 

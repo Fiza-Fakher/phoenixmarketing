@@ -1,5 +1,6 @@
 import React from "react";
 import { FiHeart, FiZap, FiTrendingUp } from "react-icons/fi";
+import logoLarge from "./logo-large.png";
 
 function MissionSection() {
   const values = [
@@ -9,19 +10,10 @@ function MissionSection() {
   ];
 
   return (
-    <section id="mission" className="relative w-full bg-black py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <style>{`
-        @keyframes pulseGlow {
-          0%,100% { opacity: .35; transform: translateY(0) scale(1); }
-          50% { opacity: .55; transform: translateY(-10px) scale(1.05); }
-        }
-        .pulseGlow { animation: pulseGlow 7s ease-in-out infinite; }
-      `}</style>
-
-      {/* Background glow */}
+    <section id="mission" className="relative w-full bg-[#050611] py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[var(--button-color)]/20 blur-[110px] pulseGlow" />
-        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_1px_1px,_rgba(244,124,32,0.22)_1px,_transparent_1px)] bg-[length:22px_22px]" />
+        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[var(--button-color)]/15 blur-[90px]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(circle_at_1px_1px,_rgba(244,124,32,0.12)_1px,_transparent_1px)] bg-[length:22px_22px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">
@@ -34,17 +26,20 @@ function MissionSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* Left - Logo */}
-          <div className="flex flex-col items-center justify-center text-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-[var(--button-color)] opacity-20 blur-3xl rounded-full" />
-              <img
-                src="/logo-large.png"
-                alt="Phoenix Logo"
-                className="relative z-10 w-44 md:w-52 h-auto drop-shadow-[0_0_30px_rgba(244,124,32,0.25)]"
-              />
+          <div >
+            <div className="flex flex-col items-center justify-center text-center gap-6">
+              <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-3xl">
+                <img
+                  src={logoLarge}
+                  alt="Phoenix Logo"
+                  className="relative z-10 w-full h-auto rounded-3xl drop-shadow-[0_0_30px_rgba(244,124,32,0.25)]"
+                />
+              </div>
+              <div>
+                <h2 className="text-white text-2xl font-bold tracking-widest">PHOENIX</h2>
+                <p className="text-gray-400 text-sm tracking-[0.2em] mt-2">MARKETING SOLUTION</p>
+              </div>
             </div>
-            <h2 className="text-white text-2xl font-bold tracking-widest mt-6">PHOENIX</h2>
-            <p className="text-gray-400 text-sm tracking-[0.2em]">MARKETING SOLUTION</p>
           </div>
 
           {/* Right - Mission Card */}

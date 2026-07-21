@@ -241,7 +241,7 @@ Please contact me with next steps.`;
                       </div>
                       <div className="min-w-0">
                         <p className="font-bold text-gray-900">Location</p>
-                        <p className="text-gray-600">Manchester, United Kingdom</p>
+                        <p className="text-gray-600">London,United Kingdom</p>
                       </div>
                     </div>
                   </div>
