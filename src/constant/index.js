@@ -1,7 +1,8 @@
 export const links = [
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
-  { name: "Portfolio", path: "https://phoenixmarketingsolution.uk/" },
+  { name: "About", path: "/about" },
+  { name: "Portfolio", path: "/portfolio" },
   { name: "Pricing", path: "/#pricing" },
   { name: "FAQs", path: "/#faq" },
   { name: "Contact", path: "/contact" }
@@ -83,3 +84,123 @@ export const CONTACT = {
   websiteDisplay: "www.phoenixmarketingsolution.uk",
   websiteHref: "https://phoenixmarketingsolution.uk",
 };
+
+export const CATEGORIES = [
+  "All",
+  "Web Development",
+  "Ads Campaigns",
+  "Branding",
+  "Graphic Design",
+  "Video Editing",
+];
+
+export const projects = [
+  {
+    id: 1,
+    slug: "e-commerce-platform-redesign",
+    title: "E-Commerce Platform Redesign",
+    category: "Web Development",
+    subtitle: "45% increase in conversion rate",
+    image:
+      "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1600&auto=format&fit=crop",
+    client: "TechRetail Co.",
+    industry: "E-Commerce & Retail",
+    timeline: "4 months",
+    services: ["UX/UI Design", "Web Development", "Performance Optimization"],
+    tools: ["Figma", "React", "Tailwind CSS", "Analytics"],
+    liveUrl: "https://example.com",
+    problem:
+      "The existing platform had high cart abandonment and confusing checkout flow, especially on mobile.",
+    solution:
+      "We redesigned the UX with a faster checkout, mobile-first layouts, and performance improvements driven by testing.",
+    deliverables: [
+      "Complete UI/UX redesign",
+      "Responsive mobile experience",
+      "Checkout flow optimization",
+      "Performance improvements",
+      "Analytics dashboard",
+    ],
+    results: [
+      { label: "Conversion Rate", value: "45%", delta: "+45%" },
+      { label: "Cart Abandonment", value: "22%", delta: "-56%" },
+      { label: "Avg Order Value", value: "$185", delta: "+32%" },
+      { label: "Session Duration", value: "4m 32s", delta: "+28%" },
+    ],
+    gallery: [
+      {
+        label: "Desktop View",
+        img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
+      },
+      {
+        label: "Mobile View",
+        img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
+      },
+      {
+        label: "Analytics",
+        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    slug: "tech-startup-brand-identity",
+    title: "Tech Startup Brand Identity",
+    category: "Branding",
+    subtitle: "Complete visual identity system",
+    image:
+      "https://images.unsplash.com/photo-1526481280695-3c687fd5432c?q=80&w=1600&auto=format&fit=crop",
+    liveUrl: "https://example.com",
+    client: "NovaLabs",
+    industry: "SaaS",
+    timeline: "6 weeks",
+    services: ["Brand Strategy", "Logo Design", "Guidelines"],
+    tools: ["Figma", "Illustrator"],
+    problem: "Brand lacked consistency across touchpoints.",
+    solution: "Built a scalable identity system with guidelines and assets.",
+    deliverables: ["Logo suite", "Color system", "Typography", "Brand guide"],
+    results: [
+      { label: "Brand Recall", value: "+38%", delta: "+38%" },
+      { label: "CTR", value: "+21%", delta: "+21%" },
+      { label: "CAC", value: "-12%", delta: "-12%" },
+      { label: "Time to Launch", value: "3w", delta: "-30%" },
+    ],
+    gallery: [
+      {
+        label: "Brand Board",
+        img: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
+      },
+    ],
+  },
+
+  {
+    id: 3,
+    slug: "social-media-campaign",
+    title: "Social Media Campaign",
+    category: "Ads Campaigns",
+    subtitle: "2.5M impressions, 8% CTR",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1600&auto=format&fit=crop",
+    liveUrl: "https://example.com",
+    client: "RetailX",
+    industry: "Retail",
+    timeline: "1 month",
+    services: ["Paid Social", "Creative Testing", "Tracking"],
+    tools: ["Meta Ads", "GA4"],
+    problem: "Low reach and weak targeting across paid social.",
+    solution: "Rebuilt audiences, creatives, and funnel tracking.",
+    deliverables: ["Creative system", "Audience testing", "Reporting"],
+    results: [
+      { label: "Impressions", value: "2.5M", delta: "+2.5M" },
+      { label: "CTR", value: "8%", delta: "+3.2%" },
+      { label: "ROAS", value: "4.1x", delta: "+1.8x" },
+      { label: "CPC", value: "$0.38", delta: "-42%" },
+    ],
+    gallery: [
+      {
+        label: "Creatives",
+        img: "https://images.unsplash.com/photo-1553484771-047a44eee27d?q=80&w=1600&auto=format&fit=crop",
+      },
+    ],
+  },
+];

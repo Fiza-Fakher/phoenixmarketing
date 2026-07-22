@@ -11,6 +11,8 @@ import Footer from "./components/common/Footer";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import ScrollToTop from "./components/common/ScrollToTop";
+import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetail";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
@@ -28,8 +30,10 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<AboutPage />} />
+          <Route path="/portfolio" element={<Projects />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects/:slug" element={<ProjectDetails />} />
         </Routes>
       </AnimatePresence>
       <Footer />
