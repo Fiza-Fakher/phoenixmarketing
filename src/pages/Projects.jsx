@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import Chip from "../components/Chip";
 import CardProject from "../components/CardProject";
 import GraphicDesignCard from "../components/GraphicDesignCard";
+import VideoEditingCard from "../components/VideoEditingCard";
 import { CATEGORIES, projects as allProjects } from "../constant/index";
 import PageTransition from "../components/common/PageTransition";
 
@@ -121,6 +122,8 @@ export default function Projects() {
             {pageItems.map((p) =>
               p.category === "Graphic Design" ? (
                 <GraphicDesignCard key={p.id} p={p} />
+              ) : p.category === "Video Editing" ? (
+                <VideoEditingCard key={p.id} p={p} />
               ) : (
                 <CardProject key={p.id} p={p} />
               )
