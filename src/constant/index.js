@@ -92,7 +92,6 @@ export const CATEGORIES = [
   "Branding",
   "Graphic Design",
   "Video Editing",
-  "Startegies",
 ];
 
 export const projects = [
