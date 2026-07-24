@@ -103,13 +103,13 @@ export const projects = [
     category: "Web Development",
     subtitle: "45% increase in conversion rate",
     image:
-      "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1600&auto=format&fit=crop",
+      "/home-images/19.jpg.jpeg",
     client: "TechRetail Co.",
     industry: "E-Commerce & Retail",
     timeline: "4 months",
     services: ["UX/UI Design", "Web Development", "Performance Optimization"],
     tools: ["Figma", "React", "Tailwind CSS", "Analytics"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://mementoresearch.com/",
     problem:
       "The existing platform had high cart abandonment and confusing checkout flow, especially on mobile.",
     solution:
@@ -130,15 +130,15 @@ export const projects = [
     gallery: [
       {
         label: "Desktop View",
-        img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop",
+        img: "/home-images/20.jpg.jpeg",
       },
       {
         label: "Mobile View",
-        img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1600&auto=format&fit=crop",
+        img: "/home-images/21.jpg.jpeg",
       },
       {
         label: "Analytics",
-        img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+        img: "/home-images/21.jpg.jpeg",
       },
     ],
   },
