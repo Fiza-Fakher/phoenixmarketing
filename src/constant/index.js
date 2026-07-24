@@ -92,6 +92,7 @@ export const CATEGORIES = [
   "Branding",
   "Graphic Design",
   "Video Editing",
+  'start',
  
 ];
 
